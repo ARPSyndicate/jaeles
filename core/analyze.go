@@ -203,7 +203,7 @@ func StoreOutput(rec libs.Record, options libs.Options) string {
 
 	// normal output
 	utils.WriteToFile(p, content)
-	sum := fmt.Sprintf("%v - %v", strings.TrimSpace(head), p)
+	sum := fmt.Sprintf("%v", strings.TrimSpace(head))
 	utils.AppendToContent(options.SummaryOutput, sum)
 
 	vulnSum := fmt.Sprintf("[%v][%v] - %v", rec.Sign.ID, rec.Sign.Info.Risk, rec.Request.Target["Raw"])
