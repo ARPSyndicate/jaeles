@@ -128,7 +128,7 @@ func StoreOutput(rec libs.Record, options libs.Options) string {
 		rec.Request.URL = rec.Request.Target["URL"]
 	}
 
-	head := fmt.Sprintf("[%v][%v-%v] - %v\n", rec.Sign.ID, rec.Sign.Info.Confidence, rec.Sign.Info.Risk, rec.Request.URL)
+	head := fmt.Sprintf("[%v] %v\n", rec.Sign.ID, rec.Request.URL)
 	if options.VerboseSummary {
 		// status-length-words-time
 		moreInfo := fmt.Sprintf("%v-%v-%v-%v", rec.Response.StatusCode, rec.Response.Length, len(strings.Split(rec.Response.Beautify, " ")), rec.Response.ResponseTime)
