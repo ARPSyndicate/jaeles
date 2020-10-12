@@ -91,9 +91,8 @@ func (r *Record) StoreOutput() {
 	if r.Request.URL == "" {
 		r.Request.URL = r.Request.Target["URL"]
 	}
-
-	head := fmt.Sprintf("[%v][%v-%v] - %v\n", r.Sign.ID, r.Sign.Info.Confidence, r.Sign.Info.Risk, r.Request.URL)
-	if r.Opt.VerboseSummary {
+		head := fmt.Sprintf("[%v] %v\n", r.Sign.ID, r.Request.URL)
+		if r.Opt.VerboseSummary {
 		// status-length-words-time
 		moreInfo := fmt.Sprintf("%v-%v-%v-%v", r.Response.StatusCode, r.Response.Length, len(strings.Split(r.Response.Beautify, " ")), r.Response.ResponseTime)
 		head = fmt.Sprintf("[%v][%v-%v][%v] - %v\n", r.Sign.ID, r.Sign.Info.Confidence, r.Sign.Info.Risk, moreInfo, r.Request.URL)
@@ -168,7 +167,7 @@ func (r *Record) StoreOutput() {
 
 	// normal output
 	utils.WriteToFile(p, content)
-	sum := fmt.Sprintf("%v - %v", strings.TrimSpace(head), p)
+	sum := fmt.Sprintf("%v", strings.TrimSpace(head))
 	utils.AppendToContent(r.Opt.SummaryOutput, sum)
 
 	vulnSum := fmt.Sprintf("[%v][%v] - %v", r.Sign.ID, r.Sign.Info.Risk, r.Request.Target["Raw"])
