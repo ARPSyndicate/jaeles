@@ -12,6 +12,7 @@ import (
 type Runner struct {
 	Input       string
 	SendingType string
+	RunnerType  string
 	Opt         libs.Options
 	Sign        libs.Signature
 	Origin      Record
@@ -30,6 +31,9 @@ type Record struct {
 	Request  libs.Request
 	Response libs.Response
 	Sign     libs.Signature
+
+	// for dns part
+	Dns libs.Dns
 
 	// passive check
 	NoOutput            bool
@@ -54,10 +58,6 @@ type Record struct {
 	DetectResult  string
 	ScanID        string
 }
-
-//
-//func InitRunnerWithDefaultOpt(url string, sign string) {
-//}
 
 // InitRunner init task
 func InitRunner(url string, sign libs.Signature, opt libs.Options) (Runner, error) {
@@ -202,6 +202,7 @@ func (r *Runner) SendOrigin(originReq libs.Request) (libs.Origin, map[string]str
 	var origin libs.Origin
 	var err error
 	var originRes libs.Response
+	originReq.EnableChecksum = true
 
 	originSign := r.Sign
 	if r.Opt.Scan.RawRequest != "" {
@@ -239,6 +240,11 @@ func (r *Runner) SendOrigin(originReq libs.Request) (libs.Origin, map[string]str
 	origin.ORequest = originReq
 	origin.OResponse = originRes
 	r.Origin = originRec
+
+	if originRes.Checksum != "" {
+		utils.DebugF("[Checksum Origin] %s - %s", originReq.URL, originRes.Checksum)
+		r.Sign.Checksums = append(r.Sign.Checksums, originRes.Checksum)
+	}
 	return origin, r.Target
 }
 

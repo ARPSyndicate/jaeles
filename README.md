@@ -1,4 +1,3 @@
-
 <p align="center">
   <img alt="Jaeles" src="https://github.com/jaeles-project/jaeles-plugins/blob/master/assets/jaeles.png?raw=true" height="140" />
   <p align="center">
@@ -8,11 +7,10 @@
   </p>
 </p>
 
-**Jaeles** is a powerful, flexible and easily extensible framework written in Go for building your own Web Application Scanner.
+**Jaeles** is a powerful, flexible and easily extensible framework written in Go for building your own Web Application
+Scanner.
 
 ![Architecture](https://github.com/jaeles-project/jaeles-plugins/blob/master/imgs/jaeles-architecture.png?raw=true)
-
-
 
 ## Painless integrate Jaeles into your recon workflow?
 
@@ -58,6 +56,7 @@ Please visit the [Official Documention](https://jaeles-project.github.io/) for m
   jaeles scan -G -c 50 -s '/tmp/custom-signature/.*' -U list_of_urls.txt
   jaeles scan -v -s '~/my-signatures/products/wordpress/.*' -u 'https://wp.example.com' -p 'root=[[.URL]]'
   cat urls.txt | grep 'interesting' | jaeles scan -L 5 -c 50 -s 'fuzz/.*' -U list_of_urls.txt --proxy http://127.0.0.1:8080
+  jaeles server -s '/tmp/custom-signature/sensitive/.*' -L 2 --fi
 
 ```
 
@@ -72,9 +71,18 @@ docker run j3ssie/jaeles scan -s '<selector>' -u http://example.com
 
 ## Showcases
 
-|     ![apache-status.png](https://github.com/jaeles-project/jaeles-plugins/blob/master/imgs/apache-status.png?raw=true) [**Apache Server Status**](https://youtu.be/nkBcIvzi3H4)     | ![tableau-dom-xss.png](https://github.com/jaeles-project/jaeles-plugins/blob/master/imgs/tableau-dom-xss.png?raw=true) [**Tableau DOM XSS CVE-2019-19719**](https://youtu.be/EG7Qmt8kt58) |
-|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
-| ![rabbitmq-cred.png](https://github.com/jaeles-project/jaeles-plugins/blob/master/imgs/rabbitmq-cred.png?raw=true) [**RabbitMQ Default Credentials**](https://youtu.be/ed4n1sCNu3s) |       ![jenkins-xss.png](https://github.com/jaeles-project/jaeles-plugins/blob/master/imgs/jenkins-xss.png?raw=true) [**Jenkins XSS CVE-2020-2096**](https://youtu.be/JfihhEOEWSE)        |
+|     ![apache-status.png](https://github.com/jaeles-project/jaeles-plugins/blob/master/imgs/apache-status.png?raw=true) [**
+Apache Server Status**](https://youtu.be/nkBcIvzi3H4)
+| ![tableau-dom-xss.png](https://github.com/jaeles-project/jaeles-plugins/blob/master/imgs/tableau-dom-xss.png?raw=true) [**
+Tableau DOM XSS CVE-2019-19719**](https://youtu.be/EG7Qmt8kt58) | |:
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
+|:
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:
+|
+| ![rabbitmq-cred.png](https://github.com/jaeles-project/jaeles-plugins/blob/master/imgs/rabbitmq-cred.png?raw=true) [**
+RabbitMQ Default Credentials**](https://youtu.be/ed4n1sCNu3s)
+|       ![jenkins-xss.png](https://github.com/jaeles-project/jaeles-plugins/blob/master/imgs/jenkins-xss.png?raw=true) [**
+Jenkins XSS CVE-2020-2096**](https://youtu.be/JfihhEOEWSE)        |
 
 <h4 align='center'> More showcase can be found <a href="https://jaeles-project.github.io/showcases/">here</a></h4>
 
@@ -86,12 +94,12 @@ docker run j3ssie/jaeles scan -s '<selector>' -u http://example.com
 
 ![Burp Integration](https://github.com/jaeles-project/jaeles-plugins/blob/master/imgs/Burp-Integration.gif?raw=true)
 
-Plugin can be found [here](https://github.com/jaeles-project/jaeles-plugins/blob/master/jaeles-burp.py) and Video Guide [here](https://youtu.be/1lxsYhfTq3M)
+Plugin can be found [here](https://github.com/jaeles-project/jaeles-plugins/blob/master/jaeles-burp.py) and Video
+Guide [here](https://youtu.be/1lxsYhfTq3M)
 
 ## Mentions
 
 [My introduction slide about Jaeles](https://speakerdeck.com/j3ssie/jaeles-the-swiss-army-knife-for-automated-web-application-testing)
-
 
 ### Planned Features
 
@@ -105,14 +113,16 @@ Plugin can be found [here](https://github.com/jaeles-project/jaeles-plugins/blob
 
 ## Contribute
 
-If you have some new idea about this project, issue, feedback or found some valuable tool feel free to open an issue for just DM me via @j3ssiejjj.
-Feel free to submit new signature to this [repo](https://github.com/jaeles-project/jaeles-signatures).
+If you have some new idea about this project, issue, feedback or found some valuable tool feel free to open an issue for
+just DM me via @j3ssiejjj. Feel free to submit new signature to
+this [repo](https://github.com/jaeles-project/jaeles-signatures).
 
 ### Credits
 
 * Special thanks to [chaitin](https://github.com/chaitin/xray) team for sharing ideas to me for build the architecture.
 
-* React components is powered by [Carbon](https://www.carbondesignsystem.com/) and [carbon-tutorial](https://github.com/carbon-design-system/carbon-tutorial).
+* React components is powered by [Carbon](https://www.carbondesignsystem.com/)
+  and [carbon-tutorial](https://github.com/carbon-design-system/carbon-tutorial).
 
 * Awesomes artworks are powered by [Freepik](http://freepik.com) at [flaticon.com](http://flaticon.com).
 
@@ -129,7 +139,8 @@ This project exists thanks to all the people who contribute. [[Contribute](CONTR
 
 ### Financial Contributors
 
-Become a financial contributor and help us sustain our community. [[Contribute](https://opencollective.com/jaeles-project/contribute)]
+Become a financial contributor and help us sustain our
+community. [[Contribute](https://opencollective.com/jaeles-project/contribute)]
 
 #### Individuals
 
@@ -137,7 +148,8 @@ Become a financial contributor and help us sustain our community. [[Contribute](
 
 #### Organizations
 
-Support this project with your organization. Your logo will show up here with a link to your website. [[Contribute](https://opencollective.com/jaeles-project/contribute)]
+Support this project with your organization. Your logo will show up here with a link to your
+website. [[Contribute](https://opencollective.com/jaeles-project/contribute)]
 
 <a href="https://opencollective.com/jaeles-project/organization/0/website"><img src="https://opencollective.com/jaeles-project/organization/0/avatar.svg"></a>
 <a href="https://opencollective.com/jaeles-project/organization/1/website"><img src="https://opencollective.com/jaeles-project/organization/1/avatar.svg"></a>
@@ -152,7 +164,7 @@ Support this project with your organization. Your logo will show up here with a 
 
 ## License
 
-`Jaeles` is made with ♥  by [@j3ssiejjj](https://twitter.com/j3ssiejjj) and it is released under the MIT license.
+`Jaeles` is made with ♥ by [@j3ssiejjj](https://twitter.com/j3ssiejjj) and it is released under the MIT license.
 
 ## Donation
 

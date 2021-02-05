@@ -43,6 +43,7 @@ type Request struct {
 	Payload           string
 	Redirect          bool
 	UseTemplateHeader bool
+	EnableChecksum    bool
 	Headers           []map[string]string
 	Values            []map[string]string
 	Body              string
@@ -54,16 +55,23 @@ type Request struct {
 	Middlewares       []string
 	Conclusions       []string
 	Detections        []string
-	Generators        []string
-	Encoding          string
-	Target            map[string]string
+
+	// run when detection is true
+	PostRun []string
+
+	// for fuzzing
+	Generators []string
+	Encoding   string
+	Target     map[string]string
 }
 
 // Response all information about response
 type Response struct {
-	HasPopUp     bool
-	StatusCode   int
-	Status       string
+	HasPopUp   bool
+	StatusCode int
+	Status     string
+	Checksum   string
+
 	Headers      []map[string]string
 	Body         string
 	ResponseTime float64

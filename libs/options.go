@@ -51,6 +51,11 @@ type Options struct {
 	EnablePassive     bool
 	DisableParallel   bool
 
+	// only enable when doing sensitive mode
+	EnableFiltering bool
+	// for DNS
+	Resolver string
+
 	// Chunk Options
 	ChunkDir     string
 	ChunkRun     bool
@@ -116,16 +121,17 @@ type Config struct {
 
 // Job define job for running routine
 type Job struct {
-	URL  string
-	Sign Signature
+	URL       string
+	Checksums []string
+	Sign      Signature
 }
 
-// PJob define job for running routine
-type PJob struct {
-	Req  Request
-	ORec Record
-	Sign Signature
-}
+//// PJob define job for running routine
+//type PJob struct {
+//	Req  Request
+//	ORec Record
+//	Sign Signature
+//}
 
 // VulnData vulnerable Data
 type VulnData struct {
